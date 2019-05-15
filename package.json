@@ -1,0 +1,29 @@
+{
+	"name": "predicate",
+	"version": "1.0.0",
+	"description": "Editor for Formal Methods using Electron and Quill.",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/giorgio19/Predicate.git"
+	},
+	"author": "Giorgio Catania, David Nicholas, Grace Kruze",
+	"license": "ISC",
+	"devDependencies": {
+		"asar": "^2.0.1",
+		"electron": "^5.0.1",
+		"electron-packager": "^13.1.1"
+
+	},
+	"dependencies": {
+		"antlr4": "^4.7.2",
+		"font-awesome": "^4.7.0",
+		"jquery": "^3.4.1",
+		"mathjax-electron": "^3.0.0",
+		"node-latex": "^2.4.4",
+		"quill": "^1.3.6"
+	}
+}
