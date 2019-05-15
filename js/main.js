@@ -26,11 +26,13 @@ app.on('ready', function () {
 		'minWidth': 800,
 		'minHeight': 600,
 		titleBarStyle: '',
-		title: 'Formal Methods Editor',
-	});
+		title: 'Predicate',
+		webPreferences:{
+			nodeIntegration: true
+	}});
 	//load the index.html
-	mainWindow.loadFile('index.html');
-
+	mainWindow.loadFile("index.html")
+	mainWindow.webContents.openDevTools();
 	mainWindow.once('ready-to-show', () => {
 		mainWindow.show()
 	})
