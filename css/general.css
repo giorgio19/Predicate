@@ -10,3 +10,6 @@
 	position: absolute;
 	background-color:#727272
 }
+#fullpage #topbar .right-btn {
+    float: right;
+}
