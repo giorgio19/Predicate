@@ -13,11 +13,11 @@
 </head>
 
 <body>
-	<div id="topbar">
-	<div id="bars">BARS</div>
-		<button id="print" class="right-btn">Print</button>
-		<button id="save" class="right-btn">Save</button>
-		<button id="load" class="right-btn">Load</button>
+	<div class="topbar" style="-webkit-app-region: drag">
+		<button class="topbar-btn topbar-right" id="print_button" onclick="print()">Print</button>
+		<button class="topbar-btn topbar-right" id="save_button" onclick="saveFile()">Save</button>
+		<button class="topbar-btn topbar-right" id="load_button" onclick="loadFile()">Load</button>
+		<div class="clear"></div>
 	</div>
 	<div id="fullpage">
 		<div class="panel-container">
