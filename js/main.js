@@ -31,10 +31,10 @@ app.on('ready', function () {
 			nodeIntegration: true
 	}});
 	//load the index.html
-	mainWindow.loadFile("index.html")
+	mainWindow.loadFile("index.html");
 	mainWindow.webContents.openDevTools();
 	mainWindow.once('ready-to-show', () => {
-		mainWindow.show()
+		mainWindow.show();
 	})
 
 	//emit when the window is closed
