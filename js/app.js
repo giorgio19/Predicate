@@ -1,4 +1,12 @@
 // JavaScript Document
+const fs = require('fs');
+const latex = require('node-latex');
+const remote = require('electron').remote;
+const dialog = remote.require('electron').dialog;
+const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
+const Quill = require('quill');
+
+
 
 //allows for resize of editor and theorems
  $(".panel-left").resizable({
@@ -6,6 +14,19 @@
    resizeHeight: false
  });
 
+ var editor = new Quill('#editor', {
+ 	modules: {
+ 		toolbar: false,
+     // keyboard: {bindings: bindings}
+   },
+   placeholder: '     Enter your proof...',
+ 	theme: 'snow'
+ });
+
+//used for saving and loading filesw
+ var loadedfs;
+
+//function to produce pdf
  function print() {
    var text = editor.getText();
    var compiler = new SlickCompiler();
@@ -20,6 +41,7 @@
    console.log(input);
  }
 
+//save as a .txt file
  function saveFile() {
      if(!loadedfs) {
          dialog.showSaveDialog({ filters: [
@@ -34,6 +56,7 @@
      }
  }
 
+//load in a .txt file
  function loadFile() {
      dialog.showOpenDialog({ filters: [
          { name: 'txt', extensions: ['txt'] },
@@ -45,6 +68,8 @@
      })
  }
 
+
+//helper functions
  function writeToFile(editor, filename) {
      var html = editor.getText();
      fs.writeFile(filename, html, function(err) {

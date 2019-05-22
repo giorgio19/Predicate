@@ -2,13 +2,13 @@ body, html {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-  width: 100%;
-  overflow: hidden;
-	position:absolute;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
 	font-family: montserrat;
 }
 button {
-  -webkit-app-region: no-drag;
+	-webkit-app-region: no-drag;
 	outline: none;
 	border: none;
 }
@@ -18,7 +18,7 @@ button {
 /*Topbar*/
 .topbar {
 	height: 35px;
-	width:100%;
+	width: 100%;
 	float: left;
 	background: #0D91C3;
 	/* margin-bottom: 20px; */
@@ -62,58 +62,73 @@ button {
 	background: #095e7e;
 	cursor: pointer;
 }
-
 .page-container {
-  margin-top: 35px;
-  height: 100%;
+	margin-top: 35px;
+	height: 100%;
+	position: absolute;
 }
-
-
 /* horizontal panel*/
-
 .panel-container {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid silver;
-  overflow: hidden;
-	height:inherit;
-
-  /* avoid browser level touch actions */
-  xtouch-action: none;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	height: inherit;
+	/* avoid browser level touch actions */
+	xtouch-action: none;
 }
-
 .panel-left {
-  flex: 0 0 auto;
-  /* only manually resize */
-  padding: 10px;
-  width: 300px;
-  min-height: 200px;
-  min-width: 150px;
-  white-space: nowrap;
-  background: #838383;
-  color: white;
+	flex: 0 0 auto;
+	/* only manually resize */
+	padding: 10px;
+	width: 469px;
+	min-height: 200px;
+	min-width: 469px;
+	white-space: nowrap;
+	background: #838383;
+	color: white;
+	overflow: hidden;
 }
-
 .splitter {
-  flex: 0 0 auto;
-  width: 18px;
-  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
-  min-height: 200px;
-  cursor: col-resize;
+	flex: 0 0 auto;
+	width: 18px;
+	background: url(./vsizegrip.png) center center no-repeat #535353;
+	min-height: 200px;
+	cursor: col-resize;
 }
-
 .panel-right {
-  flex: 1 1 auto;
-  /* resizable */
-  padding: 10px;
-  width: 100%;
-  min-height: 200px;
-  min-width: 200px;
-  background: #eee;
+	flex: 1 1 auto;
+	/* resizable */
+/*	width: 695px;*/
+	min-height: 200px;
+	min-width: 200px;
+	background: #eee;
+	overflow: scroll;
+	margin-bottom: 35px;
 }
-
-
-
+#theorems {
+	overflow: hidden;
+	position: relative;
+}
+table, td {
+	border: 0.1px solid black;
+	position: relative;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	border-spacing: 0px;
+}
+th.centerIt {
+	text-align: center;
+}
+td.eq {
+	text-align: left;
+	padding: 10px 5px 10px 15px;
+}
+td.name {
+	text-align: center;
+	padding-left: 1em;
+	padding-right: 1em;
+}
 /*Toolbar*/
 /* #toolbar{
 	text-align: center;
@@ -123,7 +138,6 @@ button {
 	width: 100%;
 	margin-top: 30px;
 } */
-
 /*Editor*/
 /* #editor {
 	width: 100%;
