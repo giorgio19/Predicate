@@ -135,13 +135,13 @@ td.name {
 .container {
 	display: inline-block;
 	cursor: pointer;
+	left: 4px;
 }
 .bar1{
 	width: 35px;
 	height: 5px;
 	background-color: #bababa;
-	margin-top: 4px;
-	margin-bottom: 6px;
+	margin: 4px 0 6px 4px;
 	transition: 0.3s;
 }
 
@@ -149,7 +149,7 @@ td.name {
 	width: 35px;
 	height: 5px;
 	background-color: #bababa;
-	margin: 6px 0;
+	margin: 6px 0 0 4px;
 	transition: 0.3s;
 }
 .change .bar1 {

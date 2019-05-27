@@ -1,9 +1,8 @@
 // JavaScript Document
 'use strict';
 
-const electron = require('electron');
-const {remote,ipcRenderer} = require('electron');
-const {app,BrowserWindow} = require('electron');
+const {electron, remote,ipcRenderer, app, BrowserWindow, Tray} = require('electron');
+var path = require('path');
 
 
 let mainWindow = null;
@@ -14,6 +13,12 @@ app.on('window-all-closed', function () {
 	// to stay active until the user quits explicitly with Cmd + Q
 	app.quit();
 });
+
+// const appIcon = new Tray('/Users/somebody/images/icon.png')
+// let win = new BrowserWindow({ icon: '/Users/somebody/images/window.png' })
+//
+// const appIcon = new Tray('./css/predicate2.png')
+// let win = new BrowserWindow({ icon: '/Users/somebody/images/window.png' })
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -27,15 +32,17 @@ app.on('ready', function () {
 		'minHeight': 600,
 		titleBarStyle: '',
 		title: 'Predicate',
+		icon: path.join(__dirname, 'AppIcon.icns'),
 		webPreferences:{
 			nodeIntegration: true
-	}});
+	}
+});
 	//load the index.html
 	mainWindow.loadFile("index.html");
 	mainWindow.webContents.openDevTools();
 	mainWindow.once('ready-to-show', () => {
 		mainWindow.show();
-	})
+	});
 
 	//emit when the window is closed
 	mainWindow.on('closed', function () {
@@ -44,6 +51,7 @@ app.on('ready', function () {
 		// when you should delete the corresponding element.
 		mainWindow = null;
 	});
+
 });
 
 
