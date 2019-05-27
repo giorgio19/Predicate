@@ -20,10 +20,11 @@ button {
 	height: 35px;
 	width: 100%;
 	float: left;
-	background: #0D91C3;
-	/* margin-bottom: 20px; */
+	background: #1e1e1e;
 	position: absolute;
 	z-index: 99;
+	font-family: montserrat;
+	left: 0px;
 }
 .topbar-left {
 	top: 0;
@@ -50,16 +51,17 @@ button {
 }
 .topbar-btn {
 	height: 35px;
-	background: #0D91C3;
-	color: white;
-	font-size: 14px;
+	background: #1e1e1e;
+	color: #bababa;
+	font-family: montserrat;
+	font-size: 16px;
 }
 .topbar-btn:hover {
-	background: #0c83b0;
+	background: #535353;
 	cursor: pointer;
 }
 .topbar-btn:active {
-	background: #095e7e;
+	background: #1e1e1e;
 	cursor: pointer;
 }
 .page-container {
@@ -129,24 +131,35 @@ td.name {
 	padding-left: 1em;
 	padding-right: 1em;
 }
-/*Toolbar*/
-/* #toolbar{
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	position: absolute;
-	width: 100%;
-	margin-top: 30px;
-} */
-/*Editor*/
-/* #editor {
-	width: 100%;
-	height: 85%;
-	overflow-y: auto;
-	color: rgb(89, 89, 89);
-	font-size: 16px;
-	margin-top: 85px;
-	padding: 0 10px 0 25px;
-	position: relative;
-	display: block;
-} */
+
+.container {
+	display: inline-block;
+	cursor: pointer;
+}
+.bar1{
+	width: 35px;
+	height: 5px;
+	background-color: #bababa;
+	margin-top: 4px;
+	margin-bottom: 6px;
+	transition: 0.3s;
+}
+
+.bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #bababa;
+	margin: 6px 0;
+	transition: 0.3s;
+}
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {
+	opacity: 0;
+}
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+}

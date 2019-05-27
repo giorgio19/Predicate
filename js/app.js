@@ -6,8 +6,6 @@ const dialog = remote.require('electron').dialog;
 const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
 
-
-
 //allows for resize of editor and theorems
  $(".panel-left").resizable({
    handleSelector: ".splitter",
@@ -87,3 +85,7 @@ const Quill = require('quill');
          editor.setText(data);
      });
  }
+
+function myFunction(x) {
+  x.classList.toggle("change");
+}
