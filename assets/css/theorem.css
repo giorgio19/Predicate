@@ -16,14 +16,7 @@ body{
     transition: 0.4s;
     -webkit-app-region: no-drag;
 }
-/*
-#accBegin {
-	text-align: center;
-}
-#search {
-	float: left;
-}
-*/
+
 .active, .accordion:hover {
 	background-color: #ccc;
 }
@@ -45,7 +38,8 @@ body{
 	width: 100%
 }
 table {
-	/* border: 0.1px solid black; */
+	border-top: 0.1px solid black; 
+    border-left: 0.1px solid black; 
 	width: 100%;
 	position: relative;
 	text-align: center;
@@ -60,8 +54,8 @@ td {
 th {
 	border-right: 0.1px solid black;
 	border-bottom: 0.1px solid black;
-	border-top: 0.1px solid black;
 }
+
 tr {
 	width: 100%;
 }
@@ -80,7 +74,7 @@ td.rule {
 	width: 10%;
 }
 tr:hover {
-	background-color: #ccc;
+	background-color: #dfdfdf;
 }
 
 #theorems{
