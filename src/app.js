@@ -695,7 +695,7 @@ var loadedfs;
 
 //function to produce pdf
 function print() {
-  var text = editor.getText();
+var text = editor.getText();
   var compiler = new SlickCompiler();
   const input = compiler.compile(text);
   dialog.showSaveDialog({filters: [{name: 'pdf', extensions: ['pdf']},
@@ -706,6 +706,7 @@ function print() {
   });
   console.log(text);
   console.log(input);
+
 }
 
 //save as a .txt file

@@ -10,7 +10,7 @@ require('electron-reload')(__dirname, {
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 let theorem
-
+let open = false;
 const modalPath = path.join('file://',__dirname, 'theorem.html')
 
 
@@ -46,10 +46,11 @@ function createWindow () {
   theorem.loadFile('./src/theorem.html')
   theorem.on('closed', function() { theorem = null })
 	
-  ipcMain.on('resize', function(open) {
-      !open ? theorem.show : console.log("theorem is showing");
+  ipcMain.on('resize', function() {
+	  !open ? theorem.show : console.log("theorem is showing");
       win.setSize(775,614);
-      console.log('connection made');
+	  open = !open;
+	  console.log('open is ' + open);
   })
 }
 
