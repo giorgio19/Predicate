@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../assets/css/theorem.css">
+    <script> window.$= window.jQuery = require("jquery");</script>
+    <script type="text/javascript" src="../node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
+
 </head>
 <body>
     <div class="topbar">Topbar</div>
-    <div class="theoremContainer">Theorems</div>
-    <script src="theorem.js"></script>
+    <div id="theorems">
+        <table>
+          <tr>
+            <th class="centerIt">Rule</th>
+            <th class="centerIt">Name</th>
+            <th class="centerIt">Equation</th>
+          </tr>
+        </table>
+      </div>
+
+    <script src="theorem.js" charset="utf-8"></script>
 </body>
 </html>
