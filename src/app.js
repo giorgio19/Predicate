@@ -1,7 +1,7 @@
 const electron = require('electron')
 const path = require('path')
 const BrowserWindow = electron.remote.BrowserWindow
-const ipc = electron.ipcRenderer
+const { ipcRenderer } = require('electron')
 
 
 const fs = require('fs');
@@ -758,19 +758,12 @@ function readFromFile(editor, filename) {
 var open = false;
 
 
-const modalPath = path.join('file://',__dirname, 'theorem.html')
-let theorem = new BrowserWindow({
-    frame: false,
-    width: 600,
-    height: 800,
-    show: false,
-    webPreferences:{nodeIntegration:true}
-})
-theorem.on('close', function() { theorem = null })
-theorem.loadURL(modalPath)
+
 
 function myFunction(x) {
   x.classList.toggle("change");
-  !open ? theorem.show() : theorem.hide();
+  document.getElementById("container").classList.toggle("resize");
+  document.getElementById("pred").classList.toggle("recenter")	
+  ipcRenderer.send('resize', open);
   open = !open;
 }

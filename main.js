@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const {ipcMain} = require('electron')
 
 require('electron-reload')(__dirname, {
   electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
@@ -8,6 +9,11 @@ require('electron-reload')(__dirname, {
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let theorem
+
+const modalPath = path.join('file://',__dirname, 'theorem.html')
+
+
 
 function createWindow () {
   // Create the browser window.
@@ -19,11 +25,7 @@ function createWindow () {
       nodeIntegration: true
     }
   })
-
-  // and load the index.html of the app.
   win.loadFile('./src/index.html')
-
-  // Open the DevTools.
   win.webContents.openDevTools()
 
   // Emitted when the window is closed.
@@ -32,6 +34,22 @@ function createWindow () {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     win = null
+  })
+	
+  theorem = new BrowserWindow({
+    frame: false,
+    width: 600,
+    height: 800,
+    show: false,
+    webPreferences:{nodeIntegration:true}
+  })
+  theorem.loadFile('./src/theorem.html')
+  theorem.on('closed', function() { theorem = null })
+	
+  ipcMain.on('resize', function(open) {
+      !open ? theorem.show : console.log("theorem is showing");
+      win.setSize(775,614);
+      console.log('connection made');
   })
 }
 
