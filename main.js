@@ -9,9 +9,9 @@ require('electron-reload')(__dirname, {
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
-let theorem
+let theoremWin
 let open = false;
-const modalPath = path.join('file://',__dirname, 'theorem.html')
+//const modalPath = path.join('file://',__dirname, 'theorem.html')
 
 
 
@@ -27,6 +27,7 @@ function createWindow () {
   })
   win.loadFile('./src/index.html')
   win.webContents.openDevTools()
+	
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -36,19 +37,25 @@ function createWindow () {
     win = null
   })
 	
-  theorem = new BrowserWindow({
+  theoremWin = new BrowserWindow({
     frame: false,
     width: 600,
     height: 800,
     show: false,
     webPreferences:{nodeIntegration:true}
   })
-  theorem.loadFile('./src/theorem.html')
-  theorem.on('closed', function() { theorem = null })
+	
+  theoremWin.loadFile('./src/theorem.html')
+  theoremWin.on('closed', function() { theoremWin = null })
 	
   ipcMain.on('resize', function() {
-	  !open ? theorem.show : console.log("theorem is showing");
-      win.setSize(775,614);
+	  if(!open){
+		  theoremWin.show();
+          win.setSize(775,614);
+	  } else {
+		  theoremWin.hide();
+		  win.setSize(1200,800)
+	  }
 	  open = !open;
 	  console.log('open is ' + open);
   })
