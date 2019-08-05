@@ -111,3 +111,8 @@ html body #container #editor{
 	position:absolute;
 	height: inherit;
 }
+
+.squeeze{
+width: 576px;
+float: left;
+}

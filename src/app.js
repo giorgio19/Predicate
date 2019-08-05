@@ -757,7 +757,7 @@ function readFromFile(editor, filename) {
 
 function myFunction(x) {
   x.classList.toggle("change");
-  $('#container').css({'width': '576px','float':'left'});
+  $('div.start').toggleClass("squeeze");
   $("div.contStart").toggleClass("theoremInline");
 }
 
