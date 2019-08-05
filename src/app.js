@@ -757,10 +757,12 @@ function readFromFile(editor, filename) {
 
 function myFunction(x) {
   x.classList.toggle("change");
-  $('#container').css({'width': '50%','float':'left'});
-	$("div.contStart").toggleClass("theoremInline");
-//  document.getElementById("container").classList.toggle("resize");
-//  document.getElementById("pred").classList.toggle("recenter")	
-//  ipcRenderer.send('resize');
+  $('#container').css({'width': '576px','float':'left'});
+  $("div.contStart").toggleClass("theoremInline");
+}
 
+function theoremPopOut(x){
+  document.getElementById("container").classList.toggle("resize");
+  document.getElementById("pred").classList.toggle("recenter")	
+  ipcRenderer.send('resize');
 }
