@@ -57,7 +57,6 @@ function createWindow () {
 		  win.setSize(1200,800)
 	  }
 	  open = !open;
-	  console.log('open is ' + open);
   })
 }
 

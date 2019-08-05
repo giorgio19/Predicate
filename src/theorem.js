@@ -49,6 +49,7 @@ function createTable() {
 		}
 	}
 	$("#theorems").append(str);
+	$("#theoremContainer").append(str);
 }
 
 

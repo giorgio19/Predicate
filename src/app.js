@@ -702,11 +702,10 @@ var text = editor.getText();
   ]}, function(filename){
     const output = fs.createWriteStream(filename);
     const pdf = latex(input).pipe(output);
-    pdf.on('error', err => console.error(err));
+    pdf.on('error', err => console.error("An error occured. Make sure all proofs follow appropiate format."));
   });
   console.log(text);
   console.log(input);
-
 }
 
 //save as a .txt file
@@ -756,15 +755,12 @@ function readFromFile(editor, filename) {
     });
 }
 
-var open = false;
-
-
-
-
 function myFunction(x) {
   x.classList.toggle("change");
-  document.getElementById("container").classList.toggle("resize");
-  document.getElementById("pred").classList.toggle("recenter")	
-  ipcRenderer.send('resize', open);
-  open = !open;
+  $('#container').css({'width': '50%','float':'left'});
+	$("div.contStart").toggleClass("theoremInline");
+//  document.getElementById("container").classList.toggle("resize");
+//  document.getElementById("pred").classList.toggle("recenter")	
+//  ipcRenderer.send('resize');
+
 }

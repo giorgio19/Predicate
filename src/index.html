@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>Predicate</title>
     <link rel="stylesheet" href="../assets/css/app.css">
+	<link rel="stylesheet" href="../assets/css/theorem.css">
     <link rel="stylesheet" href="../assets/css/quill-snow.css">
+    <script> window.$= window.jQuery = require("jquery");</script>
+    <script type="text/javascript" src="../node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
+
   </head>
   <body>
   <div id="toolbar">
@@ -31,6 +35,9 @@
       </div>
   </div>
 
+  <div class="contStart" id="theoremContainer"></div>
   </body>
+<!--	<script>window.$ = window.jQuery = require('jquery');</script>-->
+	<script src="theorem.js" charset="utf-8"></script>
   <script src="app.js" charset="utf-8"></script>
 </html>
