@@ -756,15 +756,12 @@ function readFromFile(editor, filename) {
     });
 }
 
-var open = false;
 
 
 
 
-function myFunction(x) {
-  x.classList.toggle("change");
+function myFunction() {
   document.getElementById("container").classList.toggle("resize");
-  document.getElementById("pred").classList.toggle("recenter")	
-  ipcRenderer.send('resize', open);
-  open = !open;
+  document.getElementById("pred").classList.toggle("recenter")
+  ipcRenderer.send('resize');
 }

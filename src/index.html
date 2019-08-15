@@ -5,14 +5,21 @@
     <title>Predicate</title>
     <link rel="stylesheet" href="../assets/css/app.css">
     <link rel="stylesheet" href="../assets/css/quill-snow.css">
+    <link rel="stylesheet" href="../assets/css/switch.css">
   </head>
   <body>
   <div id="toolbar">
-    <div class="hamburger" onclick="myFunction(this)">
+    <!-- <div class="hamburger" onclick="myFunction(this)">
   	  <div class="bar1"></div>
   	  <div class="bar2"></div>
   	  <div class="bar3"></div>
-  	</div>
+  	</div> -->
+    <!-- Rounded switch -->
+    <label class="switch">
+      <input type="checkbox"  onclick="myFunction()">
+      <span class="slider round"></span>
+    </label>
+
     <img id="pred" src="../assets/images/predicate3.png" class="center">
     <button class="top-btn top-right" id="print_button" onclick="print()">Print</button>
     <button class="top-btn top-right" id="save_button" onclick="saveFile()">Save</button>
@@ -25,7 +32,7 @@
         <p>Pin: </p>
         <br>
         <p>Prove (__)</p>
-        <p>by ...</p> 
+        <p>by ...</p>
         <br>
         <p> Proof:</p>
       </div>

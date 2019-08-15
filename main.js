@@ -27,7 +27,7 @@ function createWindow () {
   })
   win.loadFile('./src/index.html')
   win.webContents.openDevTools()
-	
+
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -36,7 +36,7 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
-	
+
   theoremWin = new BrowserWindow({
     frame: false,
     width: 600,
@@ -44,19 +44,20 @@ function createWindow () {
     show: false,
     webPreferences:{nodeIntegration:true}
   })
-	
+
   theoremWin.loadFile('./src/theorem.html')
   theoremWin.on('closed', function() { theoremWin = null })
-	
+
   ipcMain.on('resize', function() {
 	  if(!open){
 		  theoremWin.show();
-          win.setSize(775,614);
+      win.setSize(775,614);
+      open = !open;
 	  } else {
 		  theoremWin.hide();
-		  win.setSize(1200,800)
+		  win.setSize(1200,800);
+      open = !open;
 	  }
-	  open = !open;
 	  console.log('open is ' + open);
   })
 }
