@@ -70,3 +70,16 @@ html body #container #editor{
 	background: #E6E6E6;
 	cursor: pointer;
 }
+
+.theoremInline{
+	margin-left: 50%;
+	width: 50%;
+	overflow: scroll;
+	position:absolute;
+	height: inherit;
+}
+
+.squeeze{
+  width: 576px;
+  float: left;
+}

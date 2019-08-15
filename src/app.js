@@ -10,6 +10,7 @@ const remote = require('electron').remote;
 const dialog = remote.require('electron').dialog;
 const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
+window.$ = window.jQuery = require('jquery');
 
 const padding = '     ';
 const spacing = 5;
@@ -756,11 +757,12 @@ function readFromFile(editor, filename) {
     });
 }
 
+function theoremShow(){
+	$('div.start').toggleClass("squeeze");
+	$("div.contStart").toggleClass("theoremInline");
+}
 
-
-
-
-function myFunction() {
+function popOut() {
   document.getElementById("container").classList.toggle("resize");
   document.getElementById("pred").classList.toggle("recenter")
   ipcRenderer.send('resize');
