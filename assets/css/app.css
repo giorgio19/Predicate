@@ -44,6 +44,8 @@ html body #container #editor{
 }
 
 
+
+/*toolbar buttons*/
 .top-left {
 	top: 0;
 	left: 0;
@@ -70,6 +72,9 @@ html body #container #editor{
 	background: #E6E6E6;
 	cursor: pointer;
 }
+
+
+/*resizing for theorems*/
 
 .theoremInline{
 	margin-left: 50%;
