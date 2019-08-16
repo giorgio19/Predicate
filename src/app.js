@@ -760,6 +760,7 @@ function readFromFile(editor, filename) {
 function theoremShow(){
 	$('div.start').toggleClass("squeeze");
 	$("div.contStart").toggleClass("theoremInline");
+	$("div.tCont").toggleClass("theoremShow");
 }
 
 function popOut() {

@@ -77,6 +77,15 @@ tr:hover {
 	background-color: #dfdfdf;
 }
 
+.tCont{
+	height: 725px;
+	display: none;
+}
+
+.theoremShow{
+	display: block;
+}
+
 #theorems{
     margin:0;
     top: 35px;
