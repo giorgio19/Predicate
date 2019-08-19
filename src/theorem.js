@@ -1,3 +1,6 @@
+const { ipcRenderer } = require('electron');
+
+
 const theoremsStr = require('./Antlr/theoremsFormat.json');
 $(document).ready(function () {
 	createTable();
@@ -49,6 +52,7 @@ function createTable() {
 		}
 	}
 	$("#theorems").append(str);
+	$("#theoremInline").append(str);
 }
 
 
@@ -90,3 +94,7 @@ MathJax.Hub.Config({
 });
 
 MathJax.Hub.Queue(["Typeset", MathJax.Hub, createTable.bible]);
+
+function popIn(){
+		ipcRenderer.send('popIn');
+}

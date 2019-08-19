@@ -60,6 +60,10 @@ function createWindow () {
 	  }
 	  console.log('open is ' + open);
   })
+
+  ipcMain.on('popIn', function() {
+    console.log('connected');
+  })
 }
 
 // This method will be called when Electron has finished

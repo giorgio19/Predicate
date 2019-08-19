@@ -1,7 +1,7 @@
 const electron = require('electron')
 const path = require('path')
 const BrowserWindow = electron.remote.BrowserWindow
-const { ipcRenderer } = require('electron')
+
 
 
 const fs = require('fs');
@@ -764,7 +764,10 @@ function theoremShow(){
 }
 
 function popOut() {
+	theoremShow();
   document.getElementById("container").classList.toggle("resize");
   document.getElementById("pred").classList.toggle("recenter")
   ipcRenderer.send('resize');
+
+	//may want to hide and uncheck slider
 }
