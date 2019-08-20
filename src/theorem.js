@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const ipc = require('electron').ipcRenderer
 
 
 const theoremsStr = require('./Antlr/theoremsFormat.json');
@@ -96,5 +96,6 @@ MathJax.Hub.Config({
 MathJax.Hub.Queue(["Typeset", MathJax.Hub, createTable.bible]);
 
 function popIn(){
-		ipcRenderer.send('popIn');
+		console.log('sending');
+		ipc.send('popIn');
 }

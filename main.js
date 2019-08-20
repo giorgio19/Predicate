@@ -62,7 +62,10 @@ function createWindow () {
   })
 
   ipcMain.on('popIn', function() {
-    console.log('connected');
+    theoremWin.hide();
+    win.setSize(1200,800);
+    console.log('received it');
+    open = !open;
   })
 }
 
