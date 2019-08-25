@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Predicate</title>
     <link rel="stylesheet" href="./assets/css/app.css">
-	  <link rel="stylesheet" href="./assets/css/switch.css">
-	<link rel="stylesheet" href="./assets/css/theorem.css">
+    <link rel="stylesheet" href="./assets/css/switch.css">
+    <link rel="stylesheet" href="./assets/css/theorem.css">
     <link rel="stylesheet" href="./assets/css/quill-snow.css">
-    <script> window.$= window.jQuery = require("jquery");</script>
+    <script>window.$ = window.jQuery = require("jquery");</script>
     <script type="text/javascript" src="./node_modules/mathjax-electron/index.js"></script>
-  </head>
-  <body>
-  <div id="toolbar">
-    <div class="hamburger" onclick="myFunction(this)">
-  	  <div class="bar1"></div>
-  	  <div class="bar2"></div>
-  	  <div class="bar3"></div>
-  	</div>    
-    <div class="hamburger" onclick="theoremPopOut(this)">
-  	  <div class="bar1"></div>
-  	  <div class="bar2"></div>
-  	  <div class="bar3"></div>
-  	</div>
-    <img id="pred" src="./assets/images/predicate3.png" class="center">
-    <button class="top-btn top-right" id="print_button" onclick="print()">Print</button>
-    <button class="top-btn top-right" id="save_button" onclick="saveFile()">Save</button>
-    <button class="top-btn top-right" id="load_button" onclick="loadFile()">Load</button>
-  </div>
-  <div class="start" id="container">
-      <div id="editor">
-        <p>Name: </p>
-        <p>Assignment:  </p>
-        <p>Pin: </p>
-        <br>
-        <p>Prove (__)</p>
-        <p>by ...</p> 
-        <br>
-        <p> Proof:</p>
-      </div>
-  </div>
-  </body>
-      <script> var SlickCompiler = require("./src/Antlr/SlickCompiler").SlickCompiler;</script>
-	  <script src="./src/app.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="toolbar">
+        <label class="switch">
+            <input type="checkbox" onclick="theoremShow()">
+            <span class="slider round"></span>
+        </label>
+
+        <img id="pred" src="./assets/images/predicate3.png" class="center">
+        <button class="top-btn top-right" id="print_button" onclick="print()">Print</button>
+        <button class="top-btn top-right" id="save_button" onclick="saveFile()">Save</button>
+        <button class="top-btn top-right" id="load_button" onclick="loadFile()">Load</button>
+    </div>
+    <div class="start" id="container">
+        <div id="editor">
+            <p>Name: </p>
+            <p>Assignment:  </p>
+            <p>Pin: </p>
+            <br>
+            <p>Prove (__)</p>
+            <p>by ...</p>
+            <br>
+            <p> Proof:</p>
+        </div>
+    </div>
+    <div class="tCont">
+        <div id="topbarInline">
+            <button class="top-btn top-right" id="popOut" onclick="popOut()">Pop</button>
+        </div>
+        <div class="contStart" id="theoremInline"></div>
+    </div>
+</body>
+<script>var SlickCompiler = require("./src/Antlr/SlickCompiler").SlickCompiler;</script>
+<script src="./src/theorem.js" charset="utf-8"></script>
+<script src="./src/app.js" charset="utf-8"></script>
 </html>

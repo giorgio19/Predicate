@@ -25,8 +25,7 @@ function initialize () {
   function createWindow () {
     const windowOptions = {
       width: 1200,
-      height: 800,
-//      frame: false,
+        height: 800,
       title: app.getName(),
       webPreferences: {
         nodeIntegration: true
