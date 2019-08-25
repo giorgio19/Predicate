@@ -17,14 +17,32 @@ let open = false;
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    frame: false,
-    webPreferences: {
-      nodeIntegration: true
+
+    const windowsOpt =
+    {
+        width: 1200,
+        height: 860,
+        maximizable: false,
+        webPreferences: {
+            nodeIntegration: true
+        }
     }
-  })
+
+    const macOpt = {
+        width: 1200,
+        height: 800,
+        maximizable: false,
+        frame: false,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    }
+    if (process.platform != "linux") {
+        win = new BrowserWindow(windowsOpt);
+    } else {
+        win = new BrowserWindow(macOpt);
+    }
+
   win.loadFile('./src/index.html')
   win.webContents.openDevTools()
 
@@ -38,9 +56,9 @@ function createWindow () {
   })
 
   theoremWin = new BrowserWindow({
-    frame: false,
     width: 600,
-    height: 800,
+      height: 800,
+      maximizable: false,
     show: false,
     webPreferences:{nodeIntegration:true}
   })
