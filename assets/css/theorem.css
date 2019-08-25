@@ -1,5 +1,3 @@
-/* CSS Document */
-
 body{
     margin:0;
     -webkit-app-region: drag
@@ -77,6 +75,15 @@ td.rule {
 }
 tr:hover {
 	background-color: #dfdfdf;
+}
+
+.tCont{
+	height: 725px;
+	display: none;
+}
+
+.theoremShow{
+	display: block;
 }
 
 #theorems{

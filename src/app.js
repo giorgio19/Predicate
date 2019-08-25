@@ -1,13 +1,14 @@
 const electron = require('electron')
 const BrowserWindow = electron.remote.BrowserWindow
-const { ipcRenderer } = require('electron')
-
+const ipcRenderer = require('electron').ipcRenderer
 
 const fs = require('fs');
 const latex = require('node-latex');
-const remote = require('electron').remote;
-const dialog = remote.require('electron').dialog;
+ const remote = require('electron').remote;
+ const dialog = remote.require('electron').dialog;
+const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
+window.$ = window.jQuery = require('jquery');
 
 const padding = '     ';
 const spacing = 5;
@@ -700,10 +701,11 @@ var text = editor.getText();
   ]}, function(filename){
     const output = fs.createWriteStream(filename);
     const pdf = latex(input).pipe(output);
-    pdf.on('error', err => console.error("An error occured. Make sure all proofs follow appropiate format."));
+    pdf.on('error', err => console.error(err));
   });
   console.log(text);
   console.log(input);
+
 }
 
 //save as a .txt file
@@ -753,14 +755,17 @@ function readFromFile(editor, filename) {
     });
 }
 
-function myFunction(x) {
-  x.classList.toggle("change");
-  $('div.start').toggleClass("squeeze");
-  $("div.contStart").toggleClass("theoremInline");
+function theoremShow(){
+	$('div.start').toggleClass("squeeze");
+	$("div.contStart").toggleClass("theoremInline");
+	$("div.tCont").toggleClass("theoremShow");
 }
 
-function theoremPopOut(x){
+function popOut() {
+	theoremShow();
   document.getElementById("container").classList.toggle("resize");
-  document.getElementById("pred").classList.toggle("recenter")	
+  document.getElementById("pred").classList.toggle("recenter")
   ipcRenderer.send('resize');
+
+	//may want to hide and uncheck slider
 }
