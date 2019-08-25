@@ -8,6 +8,10 @@
   left: 6px;
 }
 
+switch:hover{
+  icon: pointer;
+}
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;

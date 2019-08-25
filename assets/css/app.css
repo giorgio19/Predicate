@@ -88,3 +88,13 @@ html body #container #editor{
   width: 576px;
   float: left;
 }
+
+
+#popIcon{
+  height: 35px;
+  float: right;
+}
+
+#popIcon:hover{
+  cursor: pointer;
+}
