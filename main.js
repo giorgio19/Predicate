@@ -13,7 +13,7 @@ require('electron-reload')(__dirname, {
 
 const debug = /--debug/.test(process.argv[2])
 
-if (process.mas) app.setName('Electron APIs')
+if (process.mas) app.setName('Predicate')
 
 let mainWindow = null
 
@@ -24,9 +24,9 @@ function initialize () {
 
   function createWindow () {
     const windowOptions = {
-      width: 1080,
-      minWidth: 680,
-      height: 840,
+      width: 1200,
+      height: 800,
+//      frame: false,
       title: app.getName(),
       webPreferences: {
         nodeIntegration: true
@@ -43,8 +43,8 @@ function initialize () {
     // Launch fullscreen with DevTools open, usage: npm run debug
     if (debug) {
       mainWindow.webContents.openDevTools()
-      mainWindow.maximize()
-      require('devtron').install()
+//      mainWindow.maximize()
+//      require('devtron').install()
     }
 
     mainWindow.on('closed', () => {
