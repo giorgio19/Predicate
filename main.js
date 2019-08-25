@@ -23,6 +23,7 @@ function createWindow () {
         width: 1200,
         height: 860,
         maximizable: false,
+        title: 'Predicate',
         webPreferences: {
             nodeIntegration: true
         }
@@ -37,9 +38,12 @@ function createWindow () {
             nodeIntegration: true
         }
     }
-    if (process.platform != "linux") {
+
+    if (process.platform === "linux") {
+      console.log("on windows");
         win = new BrowserWindow(windowsOpt);
     } else {
+      console.log("on mac")
         win = new BrowserWindow(macOpt);
     }
 
@@ -55,13 +59,33 @@ function createWindow () {
     win = null
   })
 
-  theoremWin = new BrowserWindow({
+  const theoremWinOpt = {
     width: 600,
-      height: 800,
-      maximizable: false,
+    height: 800,
+    maximizable: false,
     show: false,
-    webPreferences:{nodeIntegration:true}
-  })
+    webPreferences: {
+      nodeIntegration: true
+    }
+  };
+  const theoremMacOpt = {
+    width: 600,
+    height: 800,
+    maximizable: false,
+    show: false,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  };
+
+  if (process.platform === "linux") {
+    console.log("on windows");
+    theoremWin = new BrowserWindow(theoremWinOpt);
+  } else {
+    console.log("on mac")
+    theoremWin = new BrowserWindow(theoremMacOpt);
+  }
 
   theoremWin.loadFile('./src/theorem.html')
   theoremWin.on('closed', function() { theoremWin = null })
