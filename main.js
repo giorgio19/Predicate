@@ -89,10 +89,10 @@ function createWindow () {
   theoremWin.loadFile('./src/theorem.html')
   theoremWin.on('closed', () =>
   {
-      theoremWin = nuill;
+      theoremWin = null;
   })
 
-    
+
 }
 
 // This method will be called when Electron has finished
