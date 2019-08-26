@@ -94,7 +94,7 @@ function createWindow () {
   ipcMain.on('resize', function() {
 	  if(!open){
           theoremWin.show();
-          process.platform === "win32" ? win.setSize(775, 680); : win.setSize(775,614);
+          process.platform === "win32" ? win.setSize(775, 680) : win.setSize(775,614);
       open = !open;
 	  } else {
 		  theoremWin.hide();
