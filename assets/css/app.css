@@ -40,6 +40,7 @@ html body #toolbar{
 html body #container #editor{
   background-color: #FFFFFF;
   height: inherit;
+  -webkit-app-region: no drag;
 }
 
 
