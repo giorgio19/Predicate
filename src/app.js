@@ -766,6 +766,7 @@ function popOut() {
 
 	$("#slider").hide();
   document.getElementById("container").classList.toggle("resize");
+	$("#container").height("550px");
   document.getElementById("pred").classList.toggle("recenter");
   ipcRenderer.send('resize');
 	theoremShow();

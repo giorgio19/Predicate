@@ -86,6 +86,16 @@ tr:hover {
 	display: block;
 }
 
+#popInIcon{
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+#popInIcon:hover{
+  cursor: pointer;
+}
+
 #theorems{
     margin:0;
     top: 35px;
@@ -110,4 +120,8 @@ tr:hover {
 
 #popOut:hover{
   background-color: #B5B5B5;
+}
+
+.mjx-chtml{
+  font-size: 100%!important;
 }
