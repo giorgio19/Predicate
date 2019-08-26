@@ -765,9 +765,9 @@ function theoremShow(){
 function popOut() {
 
 	$("#slider").hide();
-  document.getElementById("container").classList.toggle("resize");
-  document.getElementById("pred").classList.toggle("recenter")
-  ipcRenderer.send('resize');
+    document.getElementById("container").classList.toggle("resize");
+    document.getElementById("pred").classList.toggle("recenter")
+    ipcRenderer.send('resize');
 	theoremShow();
 	//may want to hide and uncheck slider
 }

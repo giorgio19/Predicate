@@ -80,6 +80,7 @@ html body #container #editor{
 	margin-left: 50%;
 	width: 50%;
 	overflow: scroll;
+    overflow-x: hidden;
 	position:absolute;
 	height: inherit;
 }

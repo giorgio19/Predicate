@@ -91,7 +91,6 @@ tr:hover {
     top: 35px;
     position: relative;
     z-index: 1;
-    overflow-x: none; /*get rid of ugly scroll bars*/
 }
 
 #topbar{

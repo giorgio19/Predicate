@@ -20,7 +20,7 @@ function createWindow () {
 
     const windowsOpt =
     {
-        width: 1200,
+        width: 1215,
         height: 860,
         maximizable: false,
         title: 'Predicate',
@@ -39,7 +39,7 @@ function createWindow () {
         }
     }
 
-    if (process.platform === "linux") {
+    if (process.platform === "win32") {
       console.log("on windows");
         win = new BrowserWindow(windowsOpt);
     } else {
@@ -79,7 +79,7 @@ function createWindow () {
     }
   };
 
-  if (process.platform === "linux") {
+  if (process.platform === "win32") {
     console.log("on windows");
     theoremWin = new BrowserWindow(theoremWinOpt);
   } else {
@@ -92,8 +92,8 @@ function createWindow () {
 
   ipcMain.on('resize', function() {
 	  if(!open){
-		  theoremWin.show();
-      win.setSize(775,614);
+	    theoremWin.show();
+        win.setSize(775,614);
       open = !open;
 	  } else {
 		  theoremWin.hide();
@@ -117,7 +117,7 @@ function createWindow () {
 app.on('ready', createWindow)
 
 // Quit when all windows are closed.
-app.on('window-all-closed', () => {
+app.on('closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
