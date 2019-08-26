@@ -763,10 +763,16 @@ function theoremShow(){
 }
 
 function popOut() {
-	theoremShow();
+
+	$("#slider").hide();
   document.getElementById("container").classList.toggle("resize");
   document.getElementById("pred").classList.toggle("recenter")
   ipcRenderer.send('resize');
-
+	theoremShow();
 	//may want to hide and uncheck slider
 }
+
+
+ipcRenderer.on('popIn', function(event, arg){
+	console.log('communicated between three pages');
+});

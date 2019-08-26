@@ -96,6 +96,9 @@ MathJax.Hub.Config({
 MathJax.Hub.Queue(["Typeset", MathJax.Hub, createTable.bible]);
 
 function popIn(){
-		console.log('sending');
 		ipc.send('popIn');
 }
+
+ipc.on('popIn', function(event, arg){
+	console.log('communicated');
+});

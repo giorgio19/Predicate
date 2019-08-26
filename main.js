@@ -103,10 +103,10 @@ function createWindow () {
 	  console.log('open is ' + open);
   })
 
-  ipcMain.on('popIn', function() {
+  ipcMain.on('popIn', function(event, arg) {
     theoremWin.hide();
     win.setSize(1200,800);
-    console.log('received it');
+    win.webContents.send('popIn');
     open = !open;
   })
 }
