@@ -38,8 +38,8 @@ body{
 	width: 100%
 }
 table {
-	border-top: 0.1px solid black; 
-    border-left: 0.1px solid black; 
+	border-top: 0.1px solid black;
+    border-left: 0.1px solid black;
 	width: 100%;
 	position: relative;
 	text-align: center;
@@ -77,6 +77,25 @@ tr:hover {
 	background-color: #dfdfdf;
 }
 
+.tCont{
+	height: 725px;
+	display: none;
+}
+
+.theoremShow{
+	display: block;
+}
+
+#popInIcon{
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+#popInIcon:hover{
+  cursor: pointer;
+}
+
 #theorems{
     margin:0;
     top: 35px;
@@ -88,6 +107,21 @@ tr:hover {
     position: fixed;
     left: 0;
     top: 0;
+    height: 35px;
     width: 100%;
     z-index: 99;
+    background-color: #C5C5C5;
+}
+
+#topbarInline, #popOut{
+  height: 35px;
+  background-color: #C5C5C5;
+}
+
+#popOut:hover{
+  background-color: #B5B5B5;
+}
+
+.mjx-chtml{
+  font-size: 100%!important;
 }
