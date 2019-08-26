@@ -5,8 +5,8 @@ const ipcRenderer = require('electron').ipcRenderer
 
 const fs = require('fs');
 const latex = require('node-latex');
-// const remote = require('electron').remote;
-// const dialog = remote.require('electron').dialog;
+const remote = require('electron').remote;
+const dialog = remote.require('electron').dialog;
 const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
 window.$ = window.jQuery = require('jquery');

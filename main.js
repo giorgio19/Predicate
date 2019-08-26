@@ -63,7 +63,8 @@ function createWindow () {
     width: 600,
     height: 800,
     maximizable: false,
-    show: false,
+      show: false,
+    frame: false,
     webPreferences: {
       nodeIntegration: true
     }
@@ -92,8 +93,8 @@ function createWindow () {
 
   ipcMain.on('resize', function() {
 	  if(!open){
-	    theoremWin.show();
-        win.setSize(775,614);
+          theoremWin.show();
+          process.platform === "win32" ? win.setSize(775, 680); : win.setSize(775,614);
       open = !open;
 	  } else {
 		  theoremWin.hide();
