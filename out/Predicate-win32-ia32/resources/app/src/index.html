@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Predicate</title>
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/quill-snow.css">
+    <link rel="stylesheet" href="../assets/css/switch.css">
+    <link rel="stylesheet" href="../assets/css/theorem.css">
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script type="text/javascript" src="../node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js"></script>
+  </head>
+  <body>
+  <div id="toolbar">
+    <label id="slider" class="switch">
+      <input type="checkbox"  onclick="theoremShow()">
+      <span class="slider round"></span>
+    </label>
+
+    <img id="pred" src="../assets/images/predicate3.png" class="center">
+    <button class="top-btn top-right" id="print_button" onclick="print()">Print</button>
+    <button class="top-btn top-right" id="save_button" onclick="saveFile()">Save</button>
+    <button class="top-btn top-right" id="load_button" onclick="loadFile()">Load</button>
+  </div>
+  <div class="start" id="container">
+      <div id="editor">
+        <p>Name: </p>
+        <p>Assignment:  </p>
+        <p>Pin: </p>
+        <br>
+        <p>Prove (__)</p>
+        <p>by ...</p>
+        <br>
+        <p> Proof:</p>
+      </div>
+  </div>
+  <div class="tCont">
+        <div id="topbarInline">
+          <img id="popIcon" src="../assets/images/browser_window_add.svg" onclick="popOut()">
+        </div>
+        <div class="contStart" id="theoremInline"></div>
+  </div>
+  </body>
+  <script src="theorem.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+</html>

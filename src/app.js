@@ -695,32 +695,29 @@ var loadedfs;
 	let name;
 //function to produce pdf
 function print() {
+		var text = editor.getText();
+	  	var compiler = new SlickCompiler();
+	  	const input = compiler.compile(text);
   dialog.showSaveDialog({filters: [{name: 'pdf', extensions: ['pdf']},
 ]}, function(filename){
-		name = path.dirname(filename);
-		console.log("in it name is " + name);
-	// name = filename;
-	// console.log("now name is" + name);
-		console.log('filename is ' + filename);
-		printHelper(filename);
+		const output = fs.createWriteStream(filename);
+		const pdf = latex(input).pipe(output);
+		pdf.on('error', err => console.error(err));
+		pdf.on('finish', () => console.log('PDF generated!'))
+		console.log(text);
+		console.log(input);
   });
 
 
 }
 
-function printHelper(pathName){
-	console.log('passed path which is ' + pathName)
-		// var text = editor.getText();
-	  // var compiler = new SlickCompiler();
-	  // const input = compiler.compile(text);
-		const input2 = fs.createReadStream(path.join(__dirname, 'input.tex'));
-		const output = fs.createWriteStream(pathName);
-		const pdf = latex(input2).pipe(output);
-		pdf.on('error', err => console.error(err));
-		pdf.on('finish', () => console.log('PDF generated!'))
-		console.log(text);
-		console.log(input);
-}
+//function printHelper(pathName){
+//	console.log('passed path which is ' + pathName)
+//		var text = editor.getText();
+//	  	var compiler = new SlickCompiler();
+//	  	const input = compiler.compile(text);
+//
+//}
 
 //save as a .txt file
 function saveFile() {
