@@ -92,16 +92,9 @@ function createWindow () {
   theoremWin.on('closed', function() { theoremWin = null })
 
   ipcMain.on('resize', function() {
-	  if(!open){
           theoremWin.show();
-          process.platform === "win32" ? win.setSize(775, 680) : win.setSize(775,614);
+          process.platform === "win32" ? win.setSize(775, 675) : win.setSize(775,614);
       open = !open;
-	  } else {
-		  theoremWin.hide();
-		  win.setSize(1200,800);
-      open = !open;
-	  }
-	  console.log('open is ' + open);
   })
 
   ipcMain.on('popIn', function(event, arg) {
