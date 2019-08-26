@@ -53,16 +53,14 @@ const theoremMacOpt = {
 function createWindow () {
   // Create the browser window.
     if (process.platform === "win32") {
-      console.log("on windows");
-        win = new BrowserWindow(windowsOpt);
+      win = new BrowserWindow(windowsOpt);
+      theoremWin = new BrowserWindow(theoremWinOpt);
     } else {
-      console.log("on mac")
-        win = new BrowserWindow(macOpt);
+      win = new BrowserWindow(macOpt);
+      theoremWin = new BrowserWindow(theoremMacOpt);
     }
 
   win.loadFile('./src/index.html')
-  win.webContents.openDevTools()
-
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -72,24 +70,11 @@ function createWindow () {
     win = null
     })
 
-
-
-
-  if (process.platform === "win32") {
-    console.log("on windows");
-    theoremWin = new BrowserWindow(theoremWinOpt);
-  } else {
-    console.log("on mac")
-    theoremWin = new BrowserWindow(theoremMacOpt);
-  }
-
   theoremWin.loadFile('./src/theorem.html')
   theoremWin.on('closed', () =>
   {
       theoremWin = null;
   })
-
-
 }
 
 // This method will be called when Electron has finished
