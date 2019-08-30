@@ -7,7 +7,7 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "npm-run-all package:*",
-    "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/icons/app-icon/mac/app.icns",
+    "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=../../Desktop/out --icon=assets/icons/app-icon/mac/app.icns",
     "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/icons/app-icon/win/app.ico",
     "package:linux": "electron-packager . --overwrite --platform=linux --arch=x64 --out=out",
     "package:sign-exe": "signcode './out/Predicate-win32-ia32/Predicate.exe' --cert ~/predicate.p12 --prompt --name 'Predicate' --url 'http://electron.atom.io'",
