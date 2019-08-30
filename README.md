@@ -1,4 +1,4 @@
-# Predicate
+![Predicate Logo](/assets/images/predicate3.png)
 
 Text editor for logical proofs that outputs a pdf using latex. Built using [electron framework](https://electronjs.org), [node-latex](https://github.com/saadq/node-latex), [quilljs](https://quilljs.com), and [antlr](https://github.com/antlr/antlr4).
 
@@ -28,3 +28,5 @@ npm run package:mac
 npm run package:win
 ```
 MacOS users drag the Predicate app to your Applications folder.
+##
+Developed by Giorgio Catania and David Nicholas. Graphic design and logo created by Grace Kruse.
