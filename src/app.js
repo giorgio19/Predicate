@@ -9,7 +9,12 @@ const remote = require('electron').remote;
 const dialog = remote.require('electron').dialog;
 const SlickCompiler = require('./Antlr/SlickCompiler').SlickCompiler
 const Quill = require('quill');
+const fixPath = require('fix-path');
+
+
+
 window.$ = window.jQuery = require('jquery');
+
 
 const padding = '     ';
 const spacing = 5;
@@ -695,29 +700,27 @@ var loadedfs;
 	let name;
 //function to produce pdf
 function print() {
-		var text = editor.getText();
-	  	var compiler = new SlickCompiler();
-	  	const input = compiler.compile(text);
+	var text = editor.getText();
+  var compiler = new SlickCompiler();
+  const input = compiler.compile(text);
   dialog.showSaveDialog({filters: [{name: 'pdf', extensions: ['pdf']},
 ]}, function(filename){
-		const output = fs.createWriteStream(filename);
-		const pdf = latex(input).pipe(output);
-		pdf.on('error', err => console.error(err));
-		pdf.on('finish', () => console.log('PDF generated!'))
-		console.log(text);
-		console.log(input);
+	console.log(filename.toString())
+		printHelper(filename, input);
   });
-
-
 }
 
-//function printHelper(pathName){
-//	console.log('passed path which is ' + pathName)
-//		var text = editor.getText();
-//	  	var compiler = new SlickCompiler();
-//	  	const input = compiler.compile(text);
-//
-//}
+function printHelper(pathName, latexCode){
+		fixPath();
+		const output = fs.createWriteStream(pathName);
+		const options = {
+			errorLogs: path.join('/Users/user/Desktop/latexerrors.log'), // This will write the errors to `latexerrors.log`
+			inputs: process.env.PATH
+		}
+		const pdf = latex(latexCode, options).pipe(output);
+		pdf.on('error', err => console.log("YOU HAD AN ERROR \n" + err));
+		pdf.on('finish', () => console.log('PDF generated!'))
+}
 
 //save as a .txt file
 function saveFile() {
@@ -773,7 +776,6 @@ function theoremShow(){
 }
 
 function popOut() {
-
 	$("#slider").hide();
   document.getElementById("container").classList.toggle("resize");
 	$("#container").height("550px");

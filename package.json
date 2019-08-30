@@ -7,7 +7,7 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "npm-run-all package:*",
-    "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/icons/app-icon/mac/app.icns --no-prune",
+    "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/icons/app-icon/mac/app.icns",
     "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/icons/app-icon/win/app.ico",
     "package:linux": "electron-packager . --overwrite --platform=linux --arch=x64 --out=out",
     "package:sign-exe": "signcode './out/Predicate-win32-ia32/Predicate.exe' --cert ~/predicate.p12 --prompt --name 'Predicate' --url 'http://electron.atom.io'",
@@ -32,7 +32,9 @@
   "homepage": "https://github.com/giorgio19/Predicate#readme",
   "dependencies": {
     "antlr4": "^4.7.2",
+    "dotenv": "^8.1.0",
     "electron": "^5.0.10",
+    "fix-path": "^2.1.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "latex": "0.0.1",
