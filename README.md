@@ -1,6 +1,6 @@
 # Predicate
 
-Text editor for logical proofs that outputs a pdf using latex. Built using [electron framework](https://electronjs.org), node-latex, quill, and antlr.
+Text editor for logical proofs that outputs a pdf using latex. Built using [electron framework](https://electronjs.org), [node-latex](https://github.com/saadq/node-latex), [quilljs](https://quilljs.com), and [antlr](https://github.com/antlr/antlr4).
 
 ## Installation Requirements
 To run Predicate you will need [Node.js](https://nodejs.org/en/) and [LaTex](https://www.latex-project.org/get/#tex-distributions) installed on your computer. To clone this repository you will need [git](https://git-scm.com) command line tools installed.
