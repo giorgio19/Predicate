@@ -3,6 +3,7 @@ const {ipcRenderer} = require('electron')
 const selectDirBtn = document.getElementById('select-directory')
 
 selectDirBtn.addEventListener('click', (event) => {
+    console.log('you clicked it');
   ipcRenderer.send('open-file-dialog')
 })
 
