@@ -36,7 +36,7 @@
     "electron": "^5.0.10",
     "fix-path": "^2.1.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "latex": "0.0.1",
     "mathjax-electron": "^3.0.0",
     "node-latex": "^2.6.2",
